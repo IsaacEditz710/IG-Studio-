@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="IG Studio — creative edits, visual stories, and digital design.">
+  <title>IG Studio — Make It Iconic</title>
+  <style>
+    :root{--bg:#0b0b12;--panel:#14141f;--text:#f7f5ff;--muted:#aaa8bd;--pink:#ff4fd8;--blue:#7c5cff;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,91%);margin:auto}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}
+    .brand{font-size:1.2rem;font-weight:900;letter-spacing:.08em}.brand span{color:var(--pink)}
+    .navlinks{display:flex;gap:26px;color:var(--muted);font-size:.93rem}.navlinks a:hover{color:#fff}
+    .pill{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);padding:12px 18px;border-radius:999px;font-weight:700;font-size:.9rem;transition:.2s}
+    .pill.primary{background:linear-gradient(100deg,var(--pink),var(--blue));border:0;color:white;box-shadow:0 8px 30px #7c5cff35}.pill:hover{transform:translateY(-2px)}
+    .hero{min-height:670px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:60px 0 80px}
+    .eyebrow{color:#ff9be9;text-transform:uppercase;letter-spacing:.2em;font-weight:800;font-size:.75rem}
+    h1{font-size:clamp(3.3rem,8vw,6.8rem);line-height:.94;letter-spacing:-.075em;margin:20px 0}
+    h1 .gradient{background:linear-gradient(100deg,#ff77df,#9d8aff 65%,#70d9ff);color:transparent;background-clip:text}
+    .lead{max-width:520px;color:var(--muted);font-size:1.1rem;line-height:1.8}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.note{font-size:.8rem;color:#85839a;margin-top:18px}
+    .art{position:relative;min-height:420px;display:grid;place-items:center}
+    .orb{position:absolute;width:300px;height:300px;border-radius:50%;background:linear-gradient(135deg,#ff4fd8,#7c5cff 60%,#28d8ff);filter:blur(1px);opacity:.9;box-shadow:0 0 100px #7c5cff50}
+    .card-art{position:relative;width:min(350px,90%);aspect-ratio:4/5;border:1px solid #ffffff30;border-radius:28px;overflow:hidden;background:linear-gradient(145deg,#28203e,#11121c 55%,#361d45);transform:rotate(5deg);box-shadow:0 30px 90px #0009}
+    .card-art:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#ff67d8 22%,#6c4aff 60%,transparent 72%);top:50px;left:40px;filter:blur(1px)}
+    .card-art:after{content:"IG";position:absolute;bottom:20px;left:24px;font-size:6rem;line-height:1;font-weight:1000;letter-spacing:-.12em;color:#fff;text-shadow:0 6px 35px #0008}
+    .stamp{position:absolute;right:0;bottom:45px;background:#fff;color:#111;padding:15px 20px;border-radius:16px;font-weight:900;transform:rotate(-7deg);box-shadow:0 15px 40px #0005}
+    section{padding:76px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}.section-head h2{font-size:clamp(2rem,5vw,3.3rem);letter-spacing:-.055em;margin:8px 0 0}.section-head p{color:var(--muted);max-width:390px;line-height:1.7}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.tile{padding:25px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#181824,#101018);min-height:230px;transition:.25s}.tile:hover{transform:translateY(-5px);border-color:#ff4fd866}
+    .icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#ff4fd8,#7c5cff);font-size:1.3rem;margin-bottom:28px}
+    .tile h3{margin:0 0 10px;font-size:1.2rem}.tile p{color:var(--muted);line-height:1.7;margin:0;font-size:.95rem}
+    .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.work{min-height:270px;border-radius:24px;padding:25px;display:flex;flex-direction:column;justify-content:end;overflow:hidden;position:relative;border:1px solid var(--line);background:linear-gradient(135deg,#32204b,#11121b)}
+    .work:nth-child(2){background:linear-gradient(135deg,#123a43,#151524)}.work:nth-child(3){background:linear-gradient(135deg,#49233f,#17131f)}.work:nth-child(4){background:linear-gradient(135deg,#25305a,#15131f)}
+    .work:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-35px;top:-65px;background:linear-gradient(135deg,#ff4fd8aa,#7c5cff22);filter:blur(2px)}
+    .work:nth-child(2):before{background:linear-gradient(135deg,#49f0d2aa,#7c5cff22)}.work:nth-child(3):before{background:linear-gradient(135deg,#ff9955aa,#7c5cff22)}
+    .work small,.work h3,.work p{position:relative}.work small{color:#ddd0ff;text-transform:uppercase;letter-spacing:.16em;font-weight:800;font-size:.7rem}.work h3{font-size:1.7rem;margin:9px 0}.work p{color:#c5c2d6;margin:0}
+    .cta{padding:45px;border-radius:28px;background:linear-gradient(115deg,#ff4fd8 0%,#7c5cff 60%,#3135a6);display:flex;justify-content:space-between;align-items:center;gap:24px}.cta h2{font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.06em;margin:0 0 10px}.cta p{margin:0;color:#f1eaff;line-height:1.6}.cta .pill{background:#fff;color:#15121d;border:0;white-space:nowrap}
+    footer{padding:30px 0 40px;color:var(--muted);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;border-top:1px solid var(--line);font-size:.85rem}
+    @media(max-width:760px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:45px;gap:10px}.art{min-height:350px}.orb{width:230px;height:230px}.card-art{width:260px}.card-art:after{font-size:5rem}.section-head{display:block}.grid{grid-template-columns:1fr}.work-grid{grid-template-columns:1fr}.cta{padding:30px;display:block}.cta .pill{margin-top:22px}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a class="brand" href="#home">IG<span>✦</span>STUDIO</a>
+      <div class="navlinks"><a href="#services">Services</a><a href="#work">Our vibe</a><a href="#about">About</a></div>
+      <a class="pill" href="#contact">Let's talk ↗</a>
+    </nav>
+  </header>
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Creative energy. Iconic results.</div>
+        <h1>Ideas made<br><span class="gradient">impossible</span><br>to ignore.</h1>
+        <p class="lead">Welcome to IG Studio — a creative space for bold edits, eye-catching visuals, and digital ideas with their own vibe.</p>
+        <div class="actions"><a class="pill primary" href="#work">Explore the vibe ↘</a><a class="pill" href="#services">What we do</a></div>
+        <div class="note">DESIGNED TO STAND OUT · MADE WITH IMAGINATION</div>
+      </div>
+      <div class="art" aria-label="Abstract neon IG Studio artwork"><div class="orb"></div><div class="card-art"></div><div class="stamp">CREATE. EDIT. REPEAT. ✦</div></div>
+    </section>
+    <section class="wrap" id="services">
+      <div class="section-head"><div><div class="eyebrow">What we bring</div><h2>Small details.<br>Big energy.</h2></div><p>From a quick creative spark to a complete visual identity, this is where ideas get their glow-up.</p></div>
+      <div class="grid">
+        <article class="tile"><div class="icon">✂️</div><h3>Video Editing</h3><p>Reels, Shorts, montages, and edits with rhythm, style, and personality.</p></article>
+        <article class="tile"><div class="icon">✦</div><h3>Graphic Design</h3><p>Logos, thumbnails, posters, and visuals that catch the eye.</p></article>
+        <article class="tile"><div class="icon">◎</div><h3>Digital Creativity</h3><p>Fresh concepts, social content, and a consistent look for your online world.</p></article>
+      </div>
+    </section>
+    <section class="wrap" id="work">
+      <div class="section-head"><div><div class="eyebrow">The moodboard</div><h2>Made for the scroll-stoppers.</h2></div><p>Use these spaces to showcase your real projects. Swap in your best edits, designs, and client work whenever you're ready.</p></div>
+      <div class="work-grid">
+        <article class="work"><small>01 / Motion</small><h3>Short-form edits</h3><p>Fast cuts. Clean transitions. Main-character energy.</p></article>
+        <article class="work"><small>02 / Identity</small><h3>Brand visuals</h3><p>A look people recognise and remember.</p></article>
+        <article class="work"><small>03 / Design</small><h3>Thumbnails & posters</h3><p>Big ideas, made instantly eye-catching.</p></article>
+        <article class="work"><small>04 / Experiments</small><h3>Creative playground</h3><p>Trying new styles, one idea at a time.</p></article>
+      </div>
+    </section>
+    <section class="wrap" id="about">
+      <div class="section-head"><div><div class="eyebrow">A little about us</div><h2>Good ideas deserve<br>great visuals.</h2></div><p>IG Studio is built around creativity, curiosity, and making digital content that feels unmistakably yours. This starter site can be personalised with your story and portfolio.</p></div>
+    </section>
+    <section class="wrap" id="contact">
+      <div class="cta"><div><h2>Got an idea?<br>Let's make it real.</h2><p>Tell us what you're imagining. The next cool thing could start right here.</p></div><a class="pill" href="mailto:hello@igstudio.example?subject=Project%20enquiry">Start a project ↗</a></div>
+    </section>
+  </main>
+  <footer class="wrap"><div>© <span id="year"></span> IG Studio. Made with ✦</div><div>Creative minds. Bold visuals. Good vibes.</div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
